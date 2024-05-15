@@ -1,15 +1,19 @@
 ﻿using System.Runtime.CompilerServices;
 
+//criando banda
+Banda queen = new Banda();
+queen.Nome = "Queen";
+
 //criando album
 Album albumDoQueen = new Album();
 albumDoQueen.Nome = "A night at the opera";
 
 //criando as musicas
-Musica musica1 = new Musica();
+Musica musica1 = new Musica(queen);
 musica1.Nome = "Love of my live";
 musica1.Duracao = 213;
 
-Musica musica2 = new Musica();
+Musica musica2 = new Musica(queen);
 musica2.Nome = "Bohemian Rhapsody";
 musica2.Duracao = 354;
 
@@ -17,10 +21,10 @@ musica2.Duracao = 354;
 albumDoQueen.AdicionarMusica(musica1);
 albumDoQueen.AdicionarMusica(musica2);
 
-//criando banda
-Banda queen = new Banda();
-queen.Nome = "Queen";
+albumDoQueen.ExibirMusicasDoAlbum();
+
 queen.AdicionarAlbum(albumDoQueen);
+
 queen.ExibirDiscografia();
 
 
