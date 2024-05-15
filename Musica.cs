@@ -6,12 +6,13 @@ using System.Security.Cryptography.X509Certificates;
 class Musica
 {
     //criando um construtor: ao criar uma musica, vamos obrigar a passar informações como a banda. Construtor nao tem retorno.
-    public Musica(Banda artista) //pedir o argumento artista do tipo Banda
+    public Musica(Banda artista, string nome) //pedir o argumento artista do tipo Banda
     {
         Artista = artista; //a propriedade Artista recebe o argumento artista do construtor
+        Nome = nome;
     }
 
-    public string Nome { get; set; }
+    public string Nome { get; }
     public Banda Artista { get; }
     public int Duracao { get; set; }
     public bool Disponivel { get; set; } //acesso a essa caracteristica só pode ser feito de dentro da classe; Esse atributo tem operacao de leitura e de escrita
@@ -32,7 +33,7 @@ class Musica
     public void ExibirFichaTecnica()
     {
         Console.WriteLine($"Nome: {Nome}.");
-        Console.WriteLine($"Artista: {Artista}.");
+        Console.WriteLine($"Artista: {Artista.Nome}.");
         Console.WriteLine($"Duração: {Duracao}.");
         if (Disponivel)
         {
