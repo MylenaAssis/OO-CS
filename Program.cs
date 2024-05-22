@@ -1,38 +1,15 @@
-﻿using System.Runtime.CompilerServices;
-
-//criando banda atribuindo o nome que agora é obrigatorio por conta do construtor criado
-Banda queen = new Banda("Queen");
-
-//criando album
-Album albumDoQueen = new Album("A night at the opera");
+﻿Episodio ep1 = new(1, "Técnicas de Facilitação", 45);
+ep1.AdicionarConvidados("Maria");
+ep1.AdicionarConvidados("Joao");
 
 
-//criando as musicas com os construtores(info obrigatoria) e estrutura possivel para informações opcionais
-Musica musica1 = new Musica(queen, "Love of my life")
-{
-    Duracao = 213,
-    Disponivel = true,
-};
-
-Musica musica2 = new Musica(queen, "Bohemian Rhapsody")
-{
-    Duracao = 354,
-    Disponivel = false,
-};
-
-//inserindo musicas no album
-albumDoQueen.AdicionarMusica(musica1);
-albumDoQueen.AdicionarMusica(musica2);
-queen.AdicionarAlbum(albumDoQueen);
-
-albumDoQueen.ExibirMusicasDoAlbum();
-
-musica1.ExibirFichaTecnica();
-musica2.ExibirFichaTecnica();
-albumDoQueen.ExibirMusicasDoAlbum();
-queen.ExibirDiscografia();
+Episodio ep2 = new(2, "Técnicas de Aprendizado", 67);
+ep2.AdicionarConvidados("Mariana");
+ep2.AdicionarConvidados("Fernando");
+ep2.AdicionarConvidados("Adriane");
 
 
-
-
-
+Podcast podcast = new("Podcast especial", "Daniel");
+podcast.AdicionarEpisodios(ep1);
+podcast.AdicionarEpisodios(ep2);
+podcast.ExibirDetalhes();
