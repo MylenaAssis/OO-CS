@@ -1,18 +1,25 @@
 ﻿class Banda
 {
-    private List<Album> albuns = new List<Album>(); //lista para inserir album
+    private List<Album> albuns = new List<Album>();
+    private List<int> notas = new List<int>();
 
-    //construtor solicitando string nome da banda
     public Banda(string nome)
     {
-        Nome = nome;        
+        Nome = nome;
     }
-    public string Nome { get; } //string Nome declarada so com leitor
-    //observação importante: No c#, se colocar apenas uma opção de leitura, precisa inicializar o valor com o construtor ou atribuindo um valor no getter
+
+    public string Nome { get; }
+    public double Media => notas.Average();
+    public List<Album> Albuns => albuns;
 
     public void AdicionarAlbum(Album album)
     {
         albuns.Add(album);
+    }
+
+    public void AdicionarNota(int nota)
+    {
+        notas.Add(nota);
     }
 
     public void ExibirDiscografia()
