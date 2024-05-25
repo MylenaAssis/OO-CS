@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+﻿namespace ScreenSound.Modelos;
 
 class Episodio
 {
